@@ -1,5 +1,4 @@
-# JavaScript
-Starting new javascrip project 12-05-2024
-![Uploading image.png…]()
+# Started on 12-05-2024
+# (https://i.ytimg.com/vi/2exKokkn8o0/maxresdefault.jpg)
 
 
