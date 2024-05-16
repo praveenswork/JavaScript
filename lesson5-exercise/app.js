@@ -19,5 +19,4 @@ console.log(`Tax[10%] : ${tax}`);
 let totcost = tax + cost;
 console.log(`Total Cost : ${totcost}`);
 //5k
-
 //5l
