@@ -10,4 +10,4 @@ function calc(num1, num2, oprt) {
   }
 }
 
-calc(12, 12, "-");
+calc(12, 12, "+");

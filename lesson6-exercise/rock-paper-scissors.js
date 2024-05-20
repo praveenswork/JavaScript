@@ -1,6 +1,6 @@
 let computer = 0;
 let user = 0;
-let choice = ["rock🪨", "paper📃", "scissor✂️"];
+let choice = ["rock✊", "paper🖐️", "scissor✌️"];
 let score = 0;
 
 function clicked() {

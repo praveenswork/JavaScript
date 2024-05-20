@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>buttons</title>
+  </head>
+  <body>
+    <button onclick="console.log(`Cart Quantity: ${cartQuantity}`);over();">
+      show Quantity
+    </button>
+    <button
+      onclick="cartQuantity += 1 ; over();
+      console.log(`Cart Quantity: ${cartQuantity }`)
+      document.querySelector('#showCart').innerHTML = `Cart Quantity : ${cartQuantity}`"
+    >
+      Add to Cart
+    </button>
+    <button
+      onclick="cartQuantity += 2 ; over();
+      console.log(`Cart Quantity: ${cartQuantity };`)
+      document.querySelector('#showCart').innerHTML = `Cart Quantity : ${cartQuantity}`"
+    >
+      +2
+    </button>
+    <button
+      onclick="cartQuantity += 3 ;over();
+      console.log(`Cart Quantity: ${cartQuantity}`)
+      document.querySelector('#showCart').innerHTML = `Cart Quantity : ${cartQuantity}`"
+    >
+      +3
+    </button>
+    <button
+      onclick="cartQuantity = 0 ; 
+     console.log(`Cart reseted`)
+     document.querySelector('#showCart').innerHTML = `Cart Quantity : ${cartQuantity}`"
+    >
+      Reset Cart
+    </button>
+    <br /><br />
+    <button
+      onclick="cartQuantity -- ;no_quantity();
+      console.log(`Cart Quantity: ${cartQuantity}`)
+      document.querySelector('#showCart').innerHTML = `Cart Quantity : ${cartQuantity}`"
+    >
+      reset cart by 1
+    </button>
+    <button
+      onclick="cartQuantity += 4 ;over();
+      console.log(`Cart Quantity: ${cartQuantity}`)
+      document.querySelector('#showCart').innerHTML = `Cart Quantity : ${cartQuantity}`"
+    >
+      +4
+    </button>
+    <button
+      onclick="cartQuantity += 5 ; over()
+      console.log(`Cart Quantity: ${cartQuantity}`)
+      document.querySelector('#showCart').innerHTML = `Cart Quantity : ${cartQuantity}`"
+    >
+      +5
+    </button>
+    <button
+      onclick="cartQuantity -= 2 ;no_quantity();
+      console.log(`Cart Quantity: ${cartQuantity}`)
+      document.querySelector('#showCart').innerHTML =`Cart Quantity : ${cartQuantity}`"
+    >
+      -2
+    </button>
+    <button
+      onclick="cartQuantity -= 3 ;no_quantity();
+      console.log(`Cart Quantity: ${cartQuantity}`)
+      document.querySelector('#showCart').innerHTML = `Cart Quantity : ${cartQuantity}`"
+    >
+      -3
+    </button>
+
+    <h2 id="showCart">Cart Quantity :</h2>
+
+    <script defer src="cartQuantity.js"></script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <button id="btn1">9a</button>
+    </div>
+    <div>
+      <button id="btn2" onclick="clicked()">9b</button>
+    </div>
+    <br />
+    <div>
+      <button onclick="heads()" class="choose">Heads</button>
+      <button onclick="tails()" class="choose">Tails</button> <br />
+      <p id="change">You choose :</p>
+    </div>
+
+    <div>
+      <input class="input_value" onkeydown="entry(event)" placeholder="NAME" />
+      <button onclick="submit()">Submit()</button> <br />
+      <p id="name_in_text"></p>
+    </div>
+    <br />
+    <div>
+      <input type="text" id="input_text" onkeyup="keyup(event)" />
+      <br />
+      <p id="new_p"></p>
+    </div>
+
+    <script src="exercises.js"></script>
+  </body>
+</html>
