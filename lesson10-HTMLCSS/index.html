@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sample</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div>
+      <h2>subscribe for more content</h2>
+      <button id="subscribe" class="sub1" onclick="subscribed()">
+        Subscribe
+      </button>
+    </div>
+    <div>
+      <h3>Click this link for play rock paper scissor</h3>
+      <a
+        href="E:\Frontend-projects\JavaScript-SSDev\lesson6-exercise\rock-paper-scissors.html"
+        >RockPaperScissor</a
+      >
+    </div>
+    <div>
+      <h4>Shipping calculator</h4>
+      <h5>
+        Order under 40 $ = 10$ shipping <br />
+        Order over 40 $ = Freeshipping
+      </h5>
+      <br />
+
+      <input class="calculate" type="text" onkeydown="handlekeys(event)" />
+      <button onclick="calculate()" placeholder="calculate" class="input_btn">
+        Calculate
+      </button>
+      <br />
+      <p class="answer"></p>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
