@@ -21,10 +21,17 @@ while (a >= 0) {
   console.log(a);
   a--;
 }
-new_one = [1, 5, 4, 6];
+new_one = [1, 5, 4, 6, 9];
 function addOne() {
-  for (i = 0; (i = new_one.length - 1); i++) {
+  for (i = 0; i <= new_one.length - 1; i++) {
     console.log(i + 1);
   }
 }
 addOne();
+
+function addNum(arr, num) {
+  for (i = 0; i <= arr.length; i++) {
+    console.log(i + num);
+  }
+}
+addNum([1, 2, 3], 3);
