@@ -35,3 +35,26 @@ function addNum(arr, num) {
   }
 }
 addNum([1, 2, 3], 3);
+
+n = [1, 2, 34, 45, 0, -1, -34];
+new_n = [];
+function positive(nums) {
+  for (i = 0; i <= nums.length - 1; i++) {
+    if (n[i] > 0) {
+      new_n.push(n[i]);
+    }
+  }
+  console.log(new_n);
+}
+positive(n);
+
+//adding 2 array
+arr1 = [1, 2, 34];
+arr2 = [3, 2, 1];
+new_array = [];
+function add2arr(a1, a2) {
+  for (i = 0; i <= a1.length - 1; i++) {
+    console.log(arr1[i] + arr2[i]);
+  }
+}
+add2arr(arr1, arr2);

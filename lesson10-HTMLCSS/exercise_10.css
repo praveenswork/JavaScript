@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.btn-1 {
+  background: rgb(254, 254, 97);
+  font-family: sans-serif;
+  letter-spacing: 3px;
+  font-weight: bold;
+  border: none;
+  padding: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin: 40px;
+  border-radius: 30px;
+}

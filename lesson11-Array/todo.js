@@ -1,26 +1,28 @@
 let ToDoData = [];
 
+renderToDo();
+
 function renderToDo() {
   let htmlToDO = "";
   for (let i = 0; i < ToDoData.length; i++) {
     let todo = ToDoData[i];
     const { new_text, new_date } = todo;
     console.log(new_text, new_date);
-    let html = `<p>
-    </p> ${todo.new_text} ${todo.new_date} 
+    let html = `
+      <div>${todo.new_text} </div>
+      <div>${todo.new_date} </div>
     <button 
      class="dlt-btn" 
      onclick="ToDoData.splice(${i},1);
      renderToDo();">
-     delete
+     Done
     </button>`;
 
     htmlToDO += html;
-
-    document.querySelector(".To-Do").innerHTML = htmlToDO;
   }
+  document.querySelector(".To-Do").innerHTML = htmlToDO;
+  z;
 }
-renderToDo();
 
 function addtodo() {
   let text_value = document.querySelector(".text-input");

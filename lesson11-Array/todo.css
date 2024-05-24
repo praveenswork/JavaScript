@@ -1,0 +1,29 @@
+.box {
+  padding: 10px;
+  border-color: aqua;
+  border-radius: 5px;
+}
+.btns {
+  border: none;
+  background: cyan;
+  padding: 13px 33px;
+  margin-left: 10px;
+  border-radius: 5px;
+}
+
+.dlt-btn {
+  background: rgb(1, 223, 1);
+  border: none;
+  padding: 13px 30px;
+  margin-left: 10px;
+  border-radius: 5px;
+}
+.To-Do {
+  display: grid;
+  grid-template-columns: 180px 125px 100px;
+  grid-gap: 10px;
+  padding: 10px;
+}
+h2 {
+  margin-left: 200px;
+}
