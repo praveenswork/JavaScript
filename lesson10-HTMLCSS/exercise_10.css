@@ -14,3 +14,15 @@
   margin: 40px;
   border-radius: 30px;
 }
+.toogle {
+  border: none;
+  padding: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-left: 40px;
+  border-radius: 30px;
+}
+.is-toogle {
+  background: rgb(162, 0, 255);
+  color: aliceblue;
+}
