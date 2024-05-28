@@ -26,3 +26,6 @@
   background: rgb(162, 0, 255);
   color: aliceblue;
 }
+.is-mode-on {
+  background: red;
+}

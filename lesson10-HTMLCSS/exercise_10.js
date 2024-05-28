@@ -6,3 +6,12 @@ document.querySelector(".toogle").addEventListener("click", function () {
     element.classList.add("is-toogle");
   }
 });
+
+document.querySelector(".mode_btn").addEventListener("click", function () {
+  let is_on = document.querySelector(".mode_btn");
+  if (is_on.classList.contains("is-mode-on")) {
+    is_on.classList.remove("is-mode-on");
+  } else {
+    is_on.classList.add("is-mode-on");
+  }
+});
