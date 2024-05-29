@@ -2,6 +2,9 @@
   margin: 0;
   padding: 0;
 }
+body {
+  text-align: center;
+}
 .btn-1 {
   background: rgb(254, 254, 97);
   font-family: sans-serif;
@@ -19,13 +22,25 @@
   padding: 20px;
   padding-left: 40px;
   padding-right: 40px;
-  margin-left: 40px;
   border-radius: 30px;
 }
 .is-toogle {
   background: rgb(162, 0, 255);
   color: aliceblue;
 }
+.three-btns {
+  padding: 30px;
+}
+.mode_btn {
+  border: none;
+  padding: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+  border-radius: 30px;
+  background: #252525;
+  color: #23ff0f;
+}
 .is-mode-on {
-  background: red;
+  color: #252525;
+  background: #23ff0f;
 }
