@@ -44,3 +44,21 @@ body {
   color: #252525;
   background: #23ff0f;
 }
+
+.button-toogle {
+  padding: 20px 30px;
+  border: none;
+  border-radius: 40px;
+  outline: none;
+  margin: 15px;
+  font-weight: bolder;
+}
+
+.active {
+  background: linear-gradient(to right, rgb(83, 249, 255), rgb(255, 129, 249));
+  color: rgb(10, 0, 155);
+}
+.inactive {
+  background-color: rgb(255, 146, 250);
+  color: rgb(0, 247, 255);
+}

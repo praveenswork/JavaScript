@@ -12,3 +12,20 @@ document.querySelectorAll(".mode_btn").forEach((button) => {
     button.classList.toggle("is-mode-on");
   });
 });
+
+function toggle_btns(buttonID) {
+  const buttons = document.querySelectorAll(".button-toogle");
+  buttons.forEach((button) => {
+    button.classList.remove("active");
+    button.classList.add("inactive");
+  });
+
+  const activebutton = document.getElementById(buttonID);
+  activebutton.classList.remove("inactive");
+  activebutton.classList.add("active");
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const buttons = document.querySelectorAll(".button-toogle");
+  buttons.forEach((button) => button.classList.add("inactive"));
+});
