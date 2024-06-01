@@ -23,6 +23,10 @@
   grid-template-columns: 180px 125px 100px;
   grid-gap: 10px;
   padding: 10px;
+  color: rgb(35, 134, 35);
+  font-family: sans-serif;
+  font-size: large;
+  align-items: center;
 }
 h2 {
   margin-left: 200px;

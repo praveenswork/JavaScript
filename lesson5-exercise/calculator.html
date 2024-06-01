@@ -34,9 +34,15 @@
         =
       </button>
     </p>
+    <button id="clear" onclick="clear">clear</button>
 
     <script>
       let calculation = "";
+      function clear(event) {
+        let cleared = document.querySelector("#clear");
+        cleared.event.key("");
+        console.log(cleared);
+      }
     </script>
   </body>
 </html>

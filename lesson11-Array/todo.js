@@ -21,7 +21,6 @@ function renderToDo() {
     htmlToDO += html;
   }
   document.querySelector(".To-Do").innerHTML = htmlToDO;
-  z;
 }
 
 function addtodo() {
