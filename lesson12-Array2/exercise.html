@@ -7,9 +7,21 @@
   </head>
   <body>
     <div>
-      <button class="start_btn" onclick="setTimeout(change, 1000);">
+      <button
+        class="start_btn"
+        onclick="document.querySelector('.start_btn').innerHTML = 'loading...';setTimeout(change, 1000);"
+      >
         start
       </button>
+    </div>
+    <div>
+      <button
+        id="added_toCart"
+        onclick="added();time = setTimeout(timeout, 2000);;"
+      >
+        Add to Cart
+      </button>
+      <p id="added-msg"></p>
     </div>
 
     <script src="exercise.js"></script>
