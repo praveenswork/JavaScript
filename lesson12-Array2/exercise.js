@@ -11,13 +11,18 @@ runTwice(add);
 function change() {
   document.querySelector(".start_btn").innerHTML = "finished";
 }
+let timeout;
 
 function added() {
-  let added_msg = document.querySelector("#added_toCart").value;
-  document.getElementById("added-msg").innerHTML = "Added";
-  console.log(added_msg);
+  const message_element = document.getElementById("added-msg");
+  message_element.innerHTML = "Added";
+  clearTimeout(timeout);
+
+  timeout = setTimeout(function () {
+    message_element.innerHTML = "";
+  }, 2000);
 }
 
-function timeout() {
-  document.getElementById("added-msg").innerHTML = "";
-}
+// function timeout() {
+//   document.getElementById("added-msg").innerHTML = "";
+// }
