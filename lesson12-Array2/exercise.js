@@ -23,6 +23,21 @@ function added() {
   }, 2000);
 }
 
+setTimeout(() => {
+  document.title = "hold";
+}, 1000);
+setTimeout(() => {
+  document.title = "hold.";
+}, 2000);
+setTimeout(() => {
+  document.title = "hold..";
+}, 3000);
+setTimeout(() => {
+  document.title = "hold...";
+}, 4000);
+setTimeout(() => {
+  document.title = "hold....";
+}, 5000);
 // function timeout() {
 //   document.getElementById("added-msg").innerHTML = "";
 // }
