@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="new_calc.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h4>CALCULATOR</h4>
+      <textarea name="answer" id="answer"></textarea>
+      <p>
+        <button
+          onclick=" calculation +='1'; document.querySelector('#answer').innerHTML = calculation;"
+        >
+          1
+        </button>
+        <button
+          onclick=" calculation +='2'; document.querySelector('#answer').innerHTML = calculation;"
+        >
+          2
+        </button>
+        <button
+          onclick=" calculation +='3'; document.querySelector('#answer').innerHTML = calculation;"
+        >
+          3
+        </button>
+        <button
+          class="operator"
+          onclick=" calculation +='+'; document.querySelector('#answer').innerHTML = calculation;"
+        >
+          +
+        </button>
+      </p>
+      <p>
+        <button
+          onclick=" calculation +='4'; document.querySelector('#answer').innerHTML = calculation;"
+        >
+          4
+        </button>
+        <button
+          onclick=" calculation +='5'; document.querySelector('#answer').innerHTML = calculation;"
+        >
+          5
+        </button>
+        <button
+          onclick=" calculation +='6'; document.querySelector('#answer').innerHTML = calculation;"
+        >
+          6
+        </button>
+        <button
+          class="operator"
+          onclick=" calculation +='-'; document.querySelector('#answer').innerHTML = calculation;"
+        >
+          -
+        </button>
+      </p>
+      <p>
+        <button
+          onclick=" calculation +='7'; document.querySelector('#answer').innerHTML = calculation;"
+        >
+          7
+        </button>
+        <button
+          onclick=" calculation +='8'; document.querySelector('#answer').innerHTML = calculation;"
+        >
+          8
+        </button>
+        <button
+          onclick=" calculation +='9'; document.querySelector('#answer').innerHTML = calculation;"
+        >
+          9
+        </button>
+        <button
+          class="operator"
+          onclick=" calculation +='*'; document.querySelector('#answer').innerHTML = calculation;"
+        >
+          *
+        </button>
+      </p>
+      <p>
+        <button
+          class="operator"
+          onclick=" calculation +='.'; document.querySelector('#answer').innerHTML = calculation;"
+        >
+          .
+        </button>
+        <button
+          onclick=" calculation +='0'; document.querySelector('#answer').innerHTML = calculation;"
+        >
+          0
+        </button>
+        <button
+          class="operator"
+          onclick=" calculation +='/'; document.querySelector('#answer').innerHTML = calculation;"
+        >
+          /
+        </button>
+        <button
+          class="operator"
+          onclick=" calculation = eval(calculation);
+        document.querySelector('#answer').innerHTML =(eval(calculation))"
+        >
+          =
+        </button>
+      </p>
+      <p>
+        <button class="operator" onclick="reset() ">reset</button>
+        <button class="operator" onclick="clearLast()">clear</button>
+      </p>
+    </div>
+
+    <script src="new_calc.js"></script>
+  </body>
+</html>
