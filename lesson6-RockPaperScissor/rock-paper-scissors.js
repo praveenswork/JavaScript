@@ -47,8 +47,29 @@ function clicked() {
   console.log(json_score);
 }
 
-function re() {
+function reset() {
   document.querySelector(
     ".score"
   ).innerHTML = `Win:${(score.win = 0)}  ,  Lose:${(score.lose = 0)}  ,  Draw:${(score.draw = 0)}`;
 }
+
+let new_value = document.body.addEventListener("keydown", (event) => {
+  if (event.key === "Backspace") {
+    let confirm = prompt("You want to reset score, yes or no").toLowerCase();
+    if (confirm === "yes") {
+      reset();
+    } else {
+      alert("invalid input from you");
+    }
+    // reset();
+  } else if (event.key === "r") {
+    user = 0;
+    clicked();
+  } else if (event.key === "p") {
+    user = 1;
+    clicked();
+  } else if (event.key === "s") {
+    user = 2;
+    clicked();
+  }
+});
