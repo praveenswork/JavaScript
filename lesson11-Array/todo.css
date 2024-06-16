@@ -1,33 +1,57 @@
 .box {
   padding: 10px;
-  border-color: aqua;
+  border-color: #3572ef;
   border-radius: 5px;
 }
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #a7e6ff;
+}
+body .container {
+  width: 50%;
+  height: 80vh;
+  border: 1px solid rgb(0, 61, 173);
+  border-radius: 10px;
+  border-bottom: 1px solid #fff;
+  border-right: 1px solid #fff;
+  box-shadow: 2px 2px 10px black, 3px 3px 50px rgb(9, 0, 134);
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+
 .btns {
   border: none;
-  background: cyan;
+  background: #3572ef;
   padding: 13px 33px;
   margin-left: 10px;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .dlt-btn {
-  background: rgb(1, 223, 1);
+  background: #3abef9;
   border: none;
   padding: 13px 30px;
-  margin-left: 10px;
+  margin-left: 15px;
   border-radius: 5px;
+  cursor: pointer;
 }
 .To-Do {
   display: grid;
   grid-template-columns: 180px 125px 100px;
   grid-gap: 10px;
   padding: 10px;
-  color: rgb(35, 134, 35);
+  color: #000000;
   font-family: sans-serif;
   font-size: large;
   align-items: center;
 }
-h2 {
-  margin-left: 200px;
+.shadow:hover {
+  color: #fff;
+  box-shadow: 0px 0px 30px rgb(255, 255, 255);
 }

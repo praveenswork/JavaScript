@@ -4,7 +4,11 @@ body {
   align-items: center;
   justify-content: center;
   color: wheat;
-  font-size: 50px;
+  font-size: 40px;
+}
+body button:hover {
+  box-shadow: 0px 0px 50px yellow;
+  cursor: pointer;
 }
 .hands {
   margin-top: 50px;
@@ -16,4 +20,15 @@ body {
 }
 .hands:hover {
   background: rgba(250, 250, 145, 0.552);
+}
+
+.score {
+  font-size: large;
+}
+#reset {
+  border-radius: 10%;
+  background: #000;
+  color: rgb(255, 255, 103);
+  padding: 10px;
+  border: 1px solid yellow;
 }

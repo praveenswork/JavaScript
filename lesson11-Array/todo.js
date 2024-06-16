@@ -1,6 +1,9 @@
 let ToDoData = [];
 
 renderToDo();
+document.querySelector(".button-input").addEventListener("click", () => {
+  addtodo();
+});
 
 function renderToDo() {
   let htmlToDO = "";
@@ -12,7 +15,7 @@ function renderToDo() {
       <div>${todo.new_text} </div>
       <div>${todo.new_date} </div>
     <button 
-     class="dlt-btn" 
+     class="dlt-btn shadow" 
      onclick="ToDoData.splice(${i},1);
      renderToDo();">
      Done
