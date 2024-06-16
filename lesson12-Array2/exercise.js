@@ -11,6 +11,7 @@ runTwice(add);
 function change() {
   document.querySelector(".start_btn").innerHTML = "finished";
 }
+
 let timeout;
 
 function added() {
@@ -23,21 +24,21 @@ function added() {
   }, 2000);
 }
 
-setTimeout(() => {
-  document.title = "hold";
-}, 1000);
-setTimeout(() => {
-  document.title = "hold.";
-}, 2000);
-setTimeout(() => {
-  document.title = "hold..";
-}, 3000);
-setTimeout(() => {
-  document.title = "hold...";
-}, 4000);
-setTimeout(() => {
-  document.title = "hold....";
-}, 5000);
-// function timeout() {
-//   document.getElementById("added-msg").innerHTML = "";
-// }
+let interval = 0;
+function msg_add() {
+  setTimeout(() => {
+    document.title = `(${(interval += 1)})new message`;
+  }, 1000);
+  document.title = "exercise";
+}
+function msg_remove() {
+  if (interval < 1) {
+    interval += 0;
+    alert("no more message to remove");
+  } else {
+    setTimeout(function timeout1() {
+      document.title = `(${(interval -= 1)})new message`;
+    }, 1000);
+  }
+  document.title = "exercise";
+}
