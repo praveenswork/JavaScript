@@ -14,7 +14,7 @@ function change() {
 
 let timeout;
 
-function added() {
+let added = () => {
   const message_element = document.getElementById("added-msg");
   message_element.innerHTML = "Added";
   clearTimeout(timeout);
@@ -22,7 +22,7 @@ function added() {
   timeout = setTimeout(function () {
     message_element.innerHTML = "";
   }, 2000);
-}
+};
 
 let interval = 0;
 function msg_add() {
@@ -42,3 +42,9 @@ function msg_remove() {
   }
   document.title = "exercise";
 }
+document.querySelector(".msg_add").addEventListener("click", () => {
+  msg_add();
+});
+document.querySelector(".msg_remove").addEventListener("click", () => {
+  msg_remove();
+});
