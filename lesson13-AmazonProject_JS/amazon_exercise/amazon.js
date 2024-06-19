@@ -1,4 +1,9 @@
-import { cart } from "../amazon_exercise/data/cart.js";
+import {
+  cart,
+  addCartMessage,
+  selectQuantity,
+  updateCartQuantity,
+} from "../amazon_exercise/data/cart.js";
 import { products } from "../amazon_exercise/data/products.js";
 let productHTML = "";
 
@@ -58,50 +63,14 @@ products.forEach((product) => {
 
 document.querySelector(".js-products").innerHTML = productHTML;
 
-const timeout = {};
 document.querySelectorAll(".js-addcart").forEach((button) => {
   button.addEventListener("click", () => {
     const productId = button.dataset.productId;
 
-    let selected_quantity = Number(
-      document.querySelector(`.js-quantity-selector-${productId}`).value
-    );
-
-    let added_msg = document.querySelector(`.js-added-message-${productId}`);
-
-    added_msg.classList.add("added-message");
-
-    if (timeout[productId]) {
-      clearTimeout(timeout[productId]);
-    }
-
-    timeout[productId] = setTimeout(() => {
-      added_msg.classList.remove("added-message");
-    }, 2000);
-
-    let matchingItem;
-
-    cart.forEach((item) => {
-      if (item.productId === productId) {
-        matchingItem = item;
-      }
-    });
-
-    if (matchingItem) {
-      matchingItem.quantity += selected_quantity;
-    } else {
-      cart.push({
-        productId,
-        quantity: selected_quantity,
-      });
-    }
+    //output check
     console.log(cart);
-    let cartQuantity = 0;
-    cart.forEach((quantity) => {
-      cartQuantity += quantity.quantity;
-    });
-    let total_quantity = (document.querySelector(
-      ".js-cart-quantity"
-    ).innerHTML = cartQuantity);
+    addCartMessage(productId);
+    selectQuantity(productId);
+    updateCartQuantity();
   });
 });
