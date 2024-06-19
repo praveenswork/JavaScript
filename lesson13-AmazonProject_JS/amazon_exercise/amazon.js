@@ -1,3 +1,5 @@
+import { cart } from "../amazon_exercise/data/cart.js";
+import { products } from "../amazon_exercise/data/products.js";
 let productHTML = "";
 
 products.forEach((product) => {
@@ -86,7 +88,7 @@ document.querySelectorAll(".js-addcart").forEach((button) => {
     });
 
     if (matchingItem) {
-      matchingItem.quantity += 1;
+      matchingItem.quantity += selected_quantity;
     } else {
       cart.push({
         productId,
