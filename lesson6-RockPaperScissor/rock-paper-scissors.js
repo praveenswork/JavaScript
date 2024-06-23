@@ -1,4 +1,3 @@
-let computer = 0;
 let user = 0;
 let choice = ["rock✊", "paper🖐️", "scissor✌️"];
 
@@ -16,29 +15,27 @@ function clicked() {
   let c_data = choice[computer];
   let u_data = choice[user];
 
-  // console.log(c_data);
-  // console.log(u_data);
-
-  if (user > computer) {
-    score.win += 1;
-    document.querySelector(
-      "#score"
-    ).innerHTML = `  you  ${u_data} \n computer  ${c_data} \n you win😁`;
-
-    // document.getElementById(score).innerHTML = score + 1;
-  } else if (computer > user || user < computer) {
-    score.lose += 1;
-    document.querySelector(
-      "#score"
-    ).innerHTML = `  you  ${u_data} \n computer  ${c_data} \n you lose😢`;
-  } else if (user === computer) {
+  if (user === computer) {
     score.draw += 1;
     document.querySelector(
       "#score"
     ).innerHTML = `  you  ${u_data} \n computer  ${c_data} \n Draw😒`;
+  } else if (
+    (user === 0 && computer === 2) ||
+    (user === 1 && computer === 0) ||
+    (user === 2 && computer === 1)
+  ) {
+    score.win += 1;
+    document.querySelector(
+      "#score"
+    ).innerHTML = `  you  ${u_data} \n computer  ${c_data} \n you win😁`;
   } else {
-    alert("enter correct input");
+    score.lose += 1;
+    document.querySelector(
+      "#score"
+    ).innerHTML = `  you  ${u_data} \n computer  ${c_data} \n you lose😢`;
   }
+
   document.querySelector(
     ".score"
   ).innerHTML = `Win:${score.win}  ,  Lose:${score.lose}  ,  Draw:${score.draw}`;
@@ -48,20 +45,25 @@ function clicked() {
 }
 
 function reset() {
+  score.win = 0;
+  score.lose = 0;
+  score.draw = 0;
+  localStorage.setItem("scoreboard", JSON.stringify(score));
   document.querySelector(
     ".score"
-  ).innerHTML = `Win:${(score.win = 0)}  ,  Lose:${(score.lose = 0)}  ,  Draw:${(score.draw = 0)}`;
+  ).innerHTML = `Win:${score.win}  ,  Lose:${score.lose}  ,  Draw:${score.draw}`;
 }
 
-let new_value = document.body.addEventListener("keydown", (event) => {
+document.body.addEventListener("keydown", (event) => {
   if (event.key === "Backspace") {
-    let confirm = prompt("You want to reset score, yes or no").toLowerCase();
-    if (confirm === "yes") {
+    let confirmReset = prompt(
+      "You want to reset score, yes or no"
+    ).toLowerCase();
+    if (confirmReset === "yes") {
       reset();
     } else {
       alert("invalid input from you");
     }
-    // reset();
   } else if (event.key === "r") {
     user = 0;
     clicked();

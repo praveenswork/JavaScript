@@ -3,8 +3,8 @@ import {
   addCartMessage,
   selectQuantity,
   updateCartQuantity,
-} from "../amazon_exercise/data/cart.js";
-import { products } from "../amazon_exercise/data/products.js";
+} from "../data/cart.js";
+import { products } from "../data/products.js";
 let productHTML = "";
 
 products.forEach((product) => {
