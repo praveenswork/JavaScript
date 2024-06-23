@@ -1,6 +1,8 @@
 import { cart } from "../data/cart.js";
 import { products } from "../data/products.js";
 
+let cartProductHtml = "";
+
 cart.forEach((cartItem) => {
   const productId = cartItem.productId;
 
@@ -10,27 +12,28 @@ cart.forEach((cartItem) => {
       matchingCartItem = product;
     }
   });
-  console.log(matchingCartItem);
 
-  let cartProductHtml = `<div class="cart-item-container">
+  cartProductHtml += `<div class="cart-item-container">
               <div class="delivery-date">
                 Delivery date: Wednesday, June 15
               </div>
 
               <div class="cart-item-details-grid">
                 <img class="product-image"
-                  src="${}">
+                  src="${matchingCartItem.image}">
 
                 <div class="cart-item-details">
                   <div class="product-name">
-                    Intermediate Size Basketball
+                    ${matchingCartItem.name}
                   </div>
                   <div class="product-price">
-                    $20.95
+                    ${(matchingCartItem.priceCents / 100).toFixed(2)}
                   </div>
                   <div class="product-quantity">
                     <span>
-                      Quantity: <span class="quantity-label">1</span>
+                      Quantity: <span class="quantity-label">${
+                        cartItem.quantity
+                      }</span>
                     </span>
                     <span class="update-quantity-link link-primary">
                       Update
@@ -86,3 +89,5 @@ cart.forEach((cartItem) => {
               </div>
             </div>`;
 });
+
+document.querySelector(".js-order-cart-summary").innerHTML = cartProductHtml;
