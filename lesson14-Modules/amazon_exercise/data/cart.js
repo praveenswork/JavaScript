@@ -1,5 +1,3 @@
-import { products } from "./products";
-
 export let cart = JSON.parse(localStorage.getItem("cart"));
 
 if (!cart) {
@@ -72,4 +70,10 @@ export function calculateCartQuantity() {
   document.querySelectorAll(".update-quantity-link ").forEach((update) => {
     update.addEventListener("click", () => {});
   });
+}
+
+export function updateQuantity(productId, newQuantity) {
+  cart.quantity = newQuantity;
+  console.log(newQuantity);
+  saveToStorage();
 }

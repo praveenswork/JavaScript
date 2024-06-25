@@ -68,7 +68,7 @@ document.querySelectorAll(".js-addcart").forEach((button) => {
     const productId = button.dataset.productId;
 
     //output check
-    console.log(cart);
+    // console.log(cart);
     addCartMessage(productId);
     selectQuantity(productId);
     updateCartQuantity();
