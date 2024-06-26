@@ -73,7 +73,11 @@ export function calculateCartQuantity() {
 }
 
 export function updateQuantity(productId, newQuantity) {
-  cart.quantity = newQuantity;
-  console.log(newQuantity);
+  cart.forEach((item) => {
+    if (item.productId === productId) {
+      item.quantity = Number(newQuantity);
+    }
+    return item.quantity;
+  });
   saveToStorage();
 }
