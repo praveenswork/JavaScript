@@ -6,43 +6,36 @@ import {
   updateQuantity,
   updateDeliveryOption,
 } from "../../data/cart.js";
-import { products } from "../../data/products.js";
+import { products, getproducts } from "../../data/products.js";
 import { formatCurrency } from "../utils/money.js";
-import { deliveryOptions } from "../../data/deliverydate.js";
+import { deliveryOptions, getdeliveryOption } from "../../data/deliverydate.js";
 import dayjs from "https://unpkg.com/dayjs@1.11.10/esm/index.js";
+import { renderpaymentSummary } from "./paymentSummary.js";
 
 const today = dayjs();
 const deliverydays = today.add(7, "days");
-console.log(deliverydays.format("dddd , MMMM d"));
+// console.log(deliverydays.format("dddd , MMMM d"));
 
 export function renderOrderSummary() {
   let cartProductHtml = "";
 
   cart.forEach((cartItem) => {
     let productId = cartItem.productId;
-    let matchingCartItem;
+    const deliveryOptions = getdeliveryOption(cartItem.deliveryOptionId || 1); // Default to ID 1 if undefined
 
-    products.forEach((product) => {
-      if (productId === product.id) {
-        matchingCartItem = product;
-      }
-    });
+    const matchingCartItem = getproducts(productId);
 
     const deliveryOptionId = cartItem.deliveryOptionId;
-    let deliveryOption;
 
-    deliveryOptions.forEach((option) => {
-      if (option.id === deliveryOptionId) {
-        deliveryOption = option;
-      }
-    });
+    let deliveryOption = getdeliveryOption(deliveryOptionId);
+
     const today = dayjs();
     const deliverydays = today.add(deliveryOption.deliveryDays, "days");
     const dateString = deliverydays.format("dddd , MMMM D");
 
     cartProductHtml += `<div class="cart-item-container js-cart-product-${
       matchingCartItem.id
-    }">
+    }"<div class="order-summary js-order-cart-summary">
                 <div class="delivery-date">
                   Delivery date: ${dateString}
                 </div>
@@ -88,8 +81,6 @@ export function renderOrderSummary() {
                     <div class="delivery-options-title">
                       Choose a delivery option:
                     </div>
-                    
-  
                        ${deliveryOPtionHTML(matchingCartItem, cartItem)}
                      </div>
                  </div>
@@ -130,7 +121,7 @@ export function renderOrderSummary() {
     });
     return deliveryHTML;
   }
-
+  renderpaymentSummary();
   document.querySelector(".js-order-cart-summary").innerHTML = cartProductHtml;
 
   document.querySelectorAll(".js-delete-link").forEach((link) => {
@@ -142,6 +133,8 @@ export function renderOrderSummary() {
 
       document.querySelector(".js-checkout-heading").innerHTML = `
         ${updateCartQuantity()} items`;
+
+      renderpaymentSummary();
     });
   });
 
@@ -196,6 +189,8 @@ export function renderOrderSummary() {
 
         document.querySelector(".js-checkout-heading").innerHTML = `
           ${updateCartQuantity()} items`;
+
+        renderpaymentSummary();
       } else {
         console.error(`Quantity input for product ${productId} is not valid.`);
       }
@@ -207,6 +202,7 @@ export function renderOrderSummary() {
       const { productId, deliveryOptionId } = element.dataset;
       updateDeliveryOption(productId, deliveryOptionId);
       renderOrderSummary();
+      renderpaymentSummary();
     });
   });
 }
