@@ -26,3 +26,9 @@ export function getdeliveryOption(deliveryOptionId) {
   });
   return deliveryOption || deliveryOptions[0];
 }
+
+// export function calculateDeliveryDate(deliveryDays, deliveryOptionId) {
+//   if (deliveryDays === "Sunday" || deliveryDays === "Saturday") {
+//     getdeliveryOption(deliveryOptionId);
+//   }
+// }
