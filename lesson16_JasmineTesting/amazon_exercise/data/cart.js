@@ -41,11 +41,11 @@ function saveToStorage() {
 }
 
 export function selectQuantity(productId) {
-  let selected_quantity = Number(
-    document.querySelectorAll(`.js-quantity-selector-${productId}`)
-  );
-
   let matchingItem;
+  let selectedElement = document.querySelector(
+    `.js-quantity-selector-${productId}`
+  );
+  let selected_quantity = Number(selectedElement ? selectedElement.value : 1);
 
   cart.forEach((item) => {
     if (item.productId === productId) {

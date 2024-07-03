@@ -51,7 +51,7 @@ export function selectQuantity(productId) {
   } else {
     cart.push({
       productId,
-      quantity: selected_quantity,
+      quantity: 1,
       deliveyOptionId: "1",
     });
   }
