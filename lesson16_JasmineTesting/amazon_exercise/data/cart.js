@@ -42,9 +42,9 @@ function saveToStorage() {
 
 export function selectQuantity(productId) {
   let selected_quantity = Number(
-    document.querySelectorAll(`.js-quantity-selector-${productId}`).value
+    document.querySelectorAll(`.js-quantity-selector-${productId}`)
   );
-  console.log(selected_quantity);
+
   let matchingItem;
 
   cart.forEach((item) => {
@@ -62,6 +62,7 @@ export function selectQuantity(productId) {
       deliveyOptionId: "1",
     });
   }
+
   saveToStorage();
 }
 
