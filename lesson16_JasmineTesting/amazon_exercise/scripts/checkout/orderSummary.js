@@ -50,7 +50,9 @@ export function renderOrderSummary() {
                     <div class="product-price">
                       $${formatCurrency(matchingCartItem.priceCents)}
                     </div>
-                    <div class="product-quantity">
+                    <div class="product-quantity js-product-quantity-${
+                      matchingCartItem.id
+                    }">
                       <span>
                         Quantity: <span class="quantity-label">${
                           cartItem.quantity
@@ -69,9 +71,9 @@ export function renderOrderSummary() {
                       <span class="save-quantity-link link-primary" data-save-id="${
                         matchingCartItem.id
                       }" style="display: none;">Save</span>
-                      <span class="delete-quantity-link link-primary js-delete-link" data-delete-id="${
+                      <span class="delete-quantity-link link-primary js-delete-link js-delete-cart-${
                         matchingCartItem.id
-                      }">
+                      }" data-delete-id="${matchingCartItem.id}">
                         Delete
                       </span>
                     </div>
@@ -138,8 +140,8 @@ export function renderOrderSummary() {
     });
   });
 
-  // document.querySelector(".js-checkout-heading").innerHTML = `
-  // ${updateCartQuantity()} items`;
+  document.querySelector(".js-checkout-heading").innerHTML = `
+  ${updateCartQuantity()} items`;
 
   console.log(updateCartQuantity());
 
