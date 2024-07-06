@@ -143,7 +143,7 @@ export function renderOrderSummary() {
   document.querySelector(".js-checkout-heading").innerHTML = `
   ${updateCartQuantity()} items`;
 
-  console.log(updateCartQuantity());
+  // console.log(updateCartQuantity());
 
   calculateCartQuantity();
 

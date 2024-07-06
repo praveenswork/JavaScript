@@ -10,4 +10,7 @@ describe("Test Suit : format currency", () => {
   it("convert with 0", () => {
     expect(formatCurrency(0)).toEqual("0.00");
   });
+  it("convert with negative", () => {
+    expect(formatCurrency(-1)).toEqual("-0.01");
+  });
 });
