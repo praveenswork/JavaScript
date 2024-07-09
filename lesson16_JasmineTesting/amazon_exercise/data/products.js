@@ -11,11 +11,6 @@ export function getproducts(productId) {
 }
 
 class Products {
-  id;
-  image;
-  name;
-  rating;
-  priceCents;
   constructor(productDetails) {
     this.id = productDetails.id;
     this.image = productDetails.image;
@@ -65,7 +60,6 @@ const newquest = new Clothing({
   sizeChartLink: "images/clothing-size-chart.png",
 });
 
-// console.log(newquest);
 // console.log(newquest.sizeChartLink);
 
 export const products = [
@@ -554,6 +548,7 @@ export const products = [
   if (productDetails.type === "clothing") {
     return new Clothing(productDetails);
   }
+  // if (productDetails.keywords)
   return new Products(productDetails);
 });
 // console.log(products);

@@ -1,30 +1,30 @@
 class Car {
-  brand;
-  model;
-  speed = 150;
+  #brand;
+  #model;
+  #speed = 150;
   isTrunkOpen;
   constructor(brand, model) {
-    this.brand = brand;
-    this.model = model;
+    this.#brand = brand;
+    this.#model = model;
   }
   displayInfo() {
-    return `${this.brand} ${this.model} ${this.speed} km/h`;
+    return `${this.#brand} ${this.#model} ${this.#speed} km/h`;
   }
   go() {
     if (this.isTrunkOpen) {
-      this.speed = 0;
+      this.#speed = 0;
     } else {
-      this.speed += 5;
+      this.#speed += 5;
     }
 
-    return this.speed;
+    return this.#speed;
   }
   brake() {
-    this.speed -= 5;
-    return this.speed;
+    this.#speed -= 5;
+    return this.#speed;
   }
   openTrunk() {
-    if (this.speed) {
+    if (this.#speed) {
       this.isTrunkOpen = false;
     } else {
       this.isTrunkOpen = true;
@@ -61,3 +61,4 @@ console.log(car1.displayInfo());
 console.log(car2.displayInfo());
 racecar1.go();
 console.log(racecar1.displayInfo());
+console.log(car1);
