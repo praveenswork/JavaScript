@@ -11,6 +11,11 @@ export function getproducts(productId) {
 }
 
 class Products {
+  id;
+  image;
+  name;
+  rating;
+  priceCents;
   constructor(productDetails) {
     this.id = productDetails.id;
     this.image = productDetails.image;
@@ -26,9 +31,44 @@ class Products {
   getPrice() {
     return `$${formatCurrency(this.priceCents)}`;
   }
+  extraInfoHTML() {
+    return "";
+  }
 }
 
-export let products = [
+class Clothing extends Products {
+  sizeChartLink;
+  constructor(productDetails) {
+    super(productDetails);
+    this.sizeChartLink = productDetails.sizeChartLink;
+  }
+  extraInfoHTML() {
+    return `
+    <a href="${this.sizeChartLink}" target="_blank">
+      Size chart
+    </a>
+  `;
+  }
+}
+
+const newquest = new Clothing({
+  id: "83d4ca15-0f35-48f5-b7a3-1ea210004f2e",
+  image: "images/products/adults-plain-cotton-tshirt-2-pack-teal.jpg",
+  name: "Adults Plain Cotton T-Shirt - 2 Pack",
+  rating: {
+    stars: 4.5,
+    count: 56,
+  },
+  priceCents: 799,
+  keywords: ["tshirts", "apparel", "mens"],
+  type: "clothing",
+  sizeChartLink: "images/clothing-size-chart.png",
+});
+
+// console.log(newquest);
+// console.log(newquest.sizeChartLink);
+
+export const products = [
   {
     id: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
     image: "images/products/athletic-cotton-socks-6-pairs.jpg",
@@ -511,6 +551,9 @@ export let products = [
     keywords: ["studentsbags", "backpacks", "blackbag", "students"],
   },
 ].map((productDetails) => {
+  if (productDetails.type === "clothing") {
+    return new Clothing(productDetails);
+  }
   return new Products(productDetails);
 });
 // console.log(products);
