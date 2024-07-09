@@ -1,11 +1,11 @@
 import {
-  cart,
+  // cart,
   addCartMessage,
   selectQuantity,
   updateCartQuantity,
 } from "../data/cart.js";
 import { products } from "../data/products.js";
-import { formatCurrency } from "./utils/money.js";
+// import { formatCurrency } from "./utils/money.js";
 let productHTML = "";
 
 products.forEach((product) => {
@@ -45,8 +45,11 @@ products.forEach((product) => {
               <option value="9">9</option>
               <option value="10">10</option>
             </select>
+           
           </div>
-
+          
+          ${products.extraInfoHTML()}
+         
           <div class="product-spacer"></div>
 
           <div class="added-to-cart js-added-message-${product.id}">
@@ -61,6 +64,7 @@ products.forEach((product) => {
           </button>
         </div>`;
 });
+// document.querySelector(`.product-spacer`).innerHTML = "hi";
 
 document.querySelector(".js-products").innerHTML = productHTML;
 
