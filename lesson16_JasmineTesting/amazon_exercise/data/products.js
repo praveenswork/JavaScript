@@ -75,7 +75,7 @@ export function loadProducts(fun) {
       // if (productDetails.keywords)
       return new Products(productDetails);
     });
-    console.log("load Products");
+    // console.log("load Products");
     fun();
   });
 

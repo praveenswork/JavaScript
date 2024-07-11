@@ -9,7 +9,7 @@ import { products, loadProducts } from "../data/products.js";
 
 loadProducts(renderProductsGrid);
 
-function renderProductsGrid() {
+export function renderProductsGrid() {
   let productHTML = "";
 
   products.forEach((product) => {
