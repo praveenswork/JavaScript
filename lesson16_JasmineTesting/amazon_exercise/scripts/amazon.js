@@ -68,7 +68,6 @@ export function renderProductsGrid() {
           </button>
         </div>`;
   });
-  // document.querySelector(`.product-spacer`).innerHTML = "hi";
 
   document.querySelector(".js-products").innerHTML = productHTML;
 

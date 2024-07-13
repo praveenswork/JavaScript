@@ -120,7 +120,7 @@ export function loadCart(fun) {
 
   xhr.addEventListener("load", () => {
     console.log(xhr.response);
-    fun();
+    // fun();
   });
 
   xhr.open("GET", "https://supersimplebackend.dev/cart");
