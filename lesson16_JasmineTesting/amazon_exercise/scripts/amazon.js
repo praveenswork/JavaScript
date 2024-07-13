@@ -7,7 +7,7 @@ import {
 import { products, loadProducts } from "../data/products.js";
 // import { formatCurrency } from "./utils/money.js";
 
-loadProducts(renderProductsGrid);
+loadProducts(renderProductsGrid());
 
 export function renderProductsGrid() {
   let productHTML = "";
