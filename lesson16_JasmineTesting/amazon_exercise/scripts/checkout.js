@@ -3,18 +3,24 @@ import { renderPaymentSummary } from "./checkout/paymentSummary.js";
 // import "../data/cart_OOP.js";            practice oop
 // import "../data/cart_class.js";          practice class
 // import "../data/car.js"; car obj         practice object
-// import "../backend/practice_backend.js";
+// import "../backend/practice_backend.js";  practice backend
+import { backend } from "../app.js";
 import { loadProducts, loadProductsFetch } from "../data/products.js";
 import { loadCart } from "../data/cart.js";
 
-// loadProductsFetch();
+backend();
+loadProductsFetch();
 async function loadPage() {
-  await loadProductsFetch();
+  try {
+    await loadProductsFetch();
 
-  loadCart();
+    loadCart();
 
-  renderOrderSummary();
-  renderPaymentSummary();
+    renderOrderSummary();
+    renderPaymentSummary();
+  } catch {
+    console.log("error occure");
+  }
 }
 loadPage();
 

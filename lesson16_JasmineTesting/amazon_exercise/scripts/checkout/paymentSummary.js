@@ -58,9 +58,29 @@ export function renderPaymentSummary() {
             )}</div>
           </div>
 
-          <button class="place-order-button button-primary">
+          <button class="place-order-button button-primary js-order-place">
             Place your order
           </button>`;
 
   document.querySelector(".js-payment-summary").innerHTML = paymentSummaryHTML;
+
+  document
+    .querySelector(`.js-order-place`)
+    .addEventListener("click", async () => {
+      try {
+        const response = await fetch("https://supersimplebackend.dev/orders", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            cart: cart,
+          }),
+        });
+        const orders = await response.json();
+        console.log(orders);
+      } catch (error) {
+        console.log("unexpected occurs");
+      }
+
+      window.location.href = "orders.html";
+    });
 }
